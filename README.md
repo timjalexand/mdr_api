@@ -1,12 +1,12 @@
-# Project Title
+# mdr_api
 
-A nice project with a nice description
+A simple REST API to test SQL Server stored procs used to communicate changes to service bus
 
 ---
 
 ## Requirements
 
-For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
+For development, you will only need Node.js installed in your environement.
 
 ### Node
 
@@ -41,8 +41,8 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ## Install
 
-    $ git clone https://github.com/timjalexand/PROJECT_TITLE
-    $ cd PROJECT_TITLE
+    $ git clone https://github.com/timjalexand/mdr_api
+    $ cd mdr_api
     $ npm install
 
 ## Configure app
