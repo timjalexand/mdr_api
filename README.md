@@ -45,8 +45,6 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
     $ cd mdr_api
     $ npm install
 
-## Configure app
-
 ## Running the project
 
     $ node .
