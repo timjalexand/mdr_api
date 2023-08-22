@@ -19,7 +19,7 @@ app.get('/api/mdr/handleresponse', (req, res) => {
 app.post('/api/mdr/handleresponse', (req, res) => {
   const { Table, data } = req.body[0]
   // console.info('data from sql server: ', req.body[0])
-  // const authHeader = req.headers['authorization']
+  const authHeader = req.headers['authorization']
   if (authHeader) {
     console.log('auth header:', authHeader)
   }
