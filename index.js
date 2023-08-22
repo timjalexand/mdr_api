@@ -30,7 +30,7 @@ app.post('/api/mdr/handleresponse', (req, res) => {
         'The data passed is not in the expected format. The body should contain an object that contains a key named "table" that is a string, and a key named "data" that is a JS object',
     })
   } else {
-    console.log(req.body)
+    console.log(`Success. Processed ${req.body.length} records.`)
     res.status(202).send('Sent to queue')
   }
 })
