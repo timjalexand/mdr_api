@@ -5,6 +5,11 @@ const PORT = 5007
 app.use(express.json())
 
 app.get('/api/mdr/handleresponse', (req, res) => {
+  const authHeader = req.headers['authorization']
+  if (authHeader) {
+    console.log('auth header:', authHeader)
+  }
+
   res.status(200).send({
     status: 200,
     message: 'test succeeded!',
@@ -12,15 +17,20 @@ app.get('/api/mdr/handleresponse', (req, res) => {
 })
 
 app.post('/api/mdr/handleresponse', (req, res) => {
-  const { table, data } = req.body
-  console.info('data from sql server: ', req.body)
+  const { Table, data } = req.body[0]
+  // console.info('data from sql server: ', req.body[0])
+  // const authHeader = req.headers['authorization']
+  if (authHeader) {
+    console.log('auth header:', authHeader)
+  }
 
-  if (!data || !table) {
+  if (!data || !Table) {
     res.status(400).send({
       message:
         'The data passed is not in the expected format. The body should contain an object that contains a key named "table" that is a string, and a key named "data" that is a JS object',
     })
   } else {
+    console.log(req.body)
     res.status(202).send('Sent to queue')
   }
 })
